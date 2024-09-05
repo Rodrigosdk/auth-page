@@ -12,10 +12,18 @@ class InfomartiveContentComponent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Acesse a plataforma",
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text("Acesse a plataforma",
+            overflow: TextOverflow.fade,  
             style: theme.title),
-        Text("Faça login ou registre-se para começar a construir seus projetos ainda hoje.",
-            style: theme.subtitle)
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text("Faça login ou registre-se para começar a construir seus projetos ainda hoje.",
+            overflow: TextOverflow.fade,
+            style: theme.subtitle),
+        )
       ],
     );
   }
