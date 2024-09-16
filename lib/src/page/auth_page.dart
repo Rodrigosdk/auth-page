@@ -1,4 +1,4 @@
-import 'package:auth/page/components/criation_account/criation_account_components.dart';
+import 'package:auth/src/page/components/criation_account/criation_account_components.dart';
 import 'package:flutter/material.dart';
 
 import 'components/forms/login_forms_components.dart';

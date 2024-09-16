@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../application/usecase/auth/user_authentication_validator.dart';
+import '../../../auth/user_authentication_validator.dart';
 import '../button/button_entry_component.dart';
 import '../input/input_forgot_password_component.dart';
 import '../input/simples_input_component.dart';
