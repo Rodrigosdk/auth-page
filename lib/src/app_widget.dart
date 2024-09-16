@@ -2,10 +2,10 @@ import 'package:auth/src/page/components/button/button_entry_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'auth_page.dart';
-import 'components/criation_account/criation_account_extensions.dart';
-import 'components/infomartive_content/infomartive_content_extensions.dart';
-import 'components/input/title_input_extensions.dart';
+import 'page/auth_page.dart';
+import 'page/components/criation_account/criation_account_extensions.dart';
+import 'page/components/infomartive_content/infomartive_content_extensions.dart';
+import 'page/components/input/title_input_extensions.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
