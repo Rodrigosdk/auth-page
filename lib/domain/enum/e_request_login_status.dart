@@ -1,0 +1,4 @@
+enum ERequestLoginStatus{
+  valid,
+  invalid;
+}

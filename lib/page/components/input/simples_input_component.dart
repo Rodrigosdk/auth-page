@@ -3,28 +3,34 @@ import 'package:flutter/services.dart';
 
 import 'title_input_extensions.dart';
 
-// ignore: must_be_immutable
 class SimplesInputComponent extends StatefulWidget {
   final String title;
   final String subTitle;
   
   final TextEditingController controller;
+  final String? Function(String?)? validator;
   final TextAlign? textAlign;
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
   final bool? passwordEnable;
+  final Function(String)? onFieldSubmitted;
+  final FocusNode? focusNode;
 
-  List<TextInputFormatter>? inputFormatters;
+  final List<TextInputFormatter>? inputFormatters;
   
-  SimplesInputComponent({
-    Key? key,
+  const SimplesInputComponent({
+    super.key,
     required this.title,
     required this.controller,
     this.textAlign,
     this.onChanged,
     this.keyboardType,
-    this.inputFormatters, required this.subTitle, this.passwordEnable,
-  }) : super(key: key);
+    this.inputFormatters, 
+    required this.subTitle, 
+    this.passwordEnable, 
+    this.validator, 
+    this.onFieldSubmitted, this.focusNode,
+  });
 
   @override
   State<SimplesInputComponent> createState() => _SimplesInputComponentState();
@@ -60,26 +66,26 @@ class _SimplesInputComponentState extends State<SimplesInputComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          widget.titleWidget(context),
-          TextField(
-            controller: widget.controller,
-            onChanged: widget.onChanged,
-            inputFormatters: widget.inputFormatters,
-            obscureText: widget.passwordEnable == true? obscureText:false,
-            keyboardType:widget.keyboardType?? TextInputType.text,
-            textAlign: widget.textAlign??TextAlign.left,
-            decoration: InputDecoration(
-              suffixIcon: suffixIcon(),
-              hintText: widget.subTitle,
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        widget.titleWidget(context),
+        TextFormField(
+          validator: widget.validator,
+          controller: widget.controller,
+          onChanged: widget.onChanged,
+          focusNode: widget.focusNode,
+          inputFormatters: widget.inputFormatters,
+          onFieldSubmitted: widget.onFieldSubmitted,
+          obscureText: widget.passwordEnable == true? obscureText:false,
+          keyboardType:widget.keyboardType?? TextInputType.text,
+          textAlign: widget.textAlign??TextAlign.left,
+          decoration: InputDecoration(
+            suffixIcon: suffixIcon(),
+            hintText: widget.subTitle,
           ),
-        ]),
-    );
+        ),
+      ]);
   }
 }

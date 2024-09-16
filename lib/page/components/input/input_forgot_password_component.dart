@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'simples_input_component.dart';
 import 'title_input_extensions.dart';
 
-// ignore: must_be_immutable
 class InputForgotPasswordComponent extends SimplesInputComponent {
   final void Function()? onPressed;
 
-  InputForgotPasswordComponent({
+  const InputForgotPasswordComponent({
     super.key, 
     required this.onPressed, 
     required super.title, 
     required super.controller, 
     required super.subTitle, 
+    required super.onChanged,
+    required super.validator,
+    super.onFieldSubmitted,
     super.passwordEnable,
+    super.focusNode
   });
 
   @override
