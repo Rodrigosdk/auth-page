@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'button_entry_extensions.dart';
+import 'button_extensions.dart';
 
-class ButtonEntryComponent extends StatelessWidget {
+class ButtonComponent extends StatelessWidget {
+  final String title;
   final void Function()? onPressed;
 
-  const ButtonEntryComponent({super.key, required this.onPressed});
+  const ButtonComponent({super.key, required this.onPressed, required this.title});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).extension<ButtonEntryExtensions>()!;
+    final theme = Theme.of(context).extension<ButtonExtensions>()!;
 
     return Row(
       children: [
@@ -17,11 +18,11 @@ class ButtonEntryComponent extends StatelessWidget {
           child: ElevatedButton(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
-              backgroundColor:  theme.background,
+              backgroundColor: theme.background,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4))),
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text('Entrar', style: theme.textButton),
+                child: Text(title, style: theme.textButton),
               ),
             ),
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'page/auth_page.dart';
+import 'page/components/button/button_extensions.dart';
 import 'page/components/criation_account/criation_account_extensions.dart';
 import 'page/components/infomartive_content/infomartive_content_extensions.dart';
 import 'page/components/input/title_input_extensions.dart';
@@ -52,7 +53,7 @@ class AppWidget extends StatelessWidget {
             title: GoogleFonts.titilliumWeb(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600),
             linktitle: GoogleFonts.titilliumWeb(color: const Color(0xff7C3AED), fontSize: 14, fontWeight: FontWeight.w600)
           ),
-          ButtonEntryExtensions(
+          ButtonExtensions(
             textButton: GoogleFonts.titilliumWeb(
               fontWeight: FontWeight.w700,
               fontSize: 16,

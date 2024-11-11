@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'criation_account_extensions.dart';
 
-class CriationAccountComponents extends StatelessWidget {
+class QuestionOptionsLineComponents extends StatelessWidget {
+  final String title;
+  final String subTitle;
   final void Function() onPressed;
   
-  const CriationAccountComponents({super.key, required this.onPressed});
+  const QuestionOptionsLineComponents({super.key, required this.onPressed, required this.title, required this.subTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +17,13 @@ class CriationAccountComponents extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Flexible(child: Text(
-          "Ainda não tem uma conta?",
+          title,
           overflow: TextOverflow.ellipsis,
           style: theme.title)),
         TextButton(
           onPressed: onPressed, 
           style: TextButton.styleFrom(overlayColor: Colors.transparent),
-          child: Text("Inscreva-se",style:theme.linktitle ))
+          child: Text(subTitle,style:theme.linktitle ))
       ],
     );
   }

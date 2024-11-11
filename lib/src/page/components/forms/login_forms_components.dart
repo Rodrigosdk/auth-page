@@ -72,8 +72,9 @@ class _LoginFormsComponentsState extends State<LoginFormsComponents> {
 
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 15.0),
-            child: ButtonEntryComponent(onPressed: (){
-              loginValidator.execute();},),
+            child: ButtonComponent(
+              onPressed: (){loginValidator.execute();}, 
+              title: 'Entrar',),
           ),]));
   }
 }

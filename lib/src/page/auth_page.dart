@@ -1,4 +1,4 @@
-import 'package:auth/src/page/components/criation_account/criation_account_components.dart';
+import 'package:auth/src/page/components/criation_account/question_options_line_components.dart';
 import 'package:flutter/material.dart';
 
 import 'components/forms/login_forms_components.dart';
@@ -27,7 +27,9 @@ class AuthPage extends StatelessWidget {
                         const SizedBox(height: 65,),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 15.0),
-                        child: InfomartiveContentComponent(),
+                        child: InfomartiveContentComponent(
+                          title: "Faça login",
+                          description: "Faça login ou registre-se para começar a construir seus projetos ainda hoje.",),
                       ),
                       if(MediaQuery.of(context).size.width <= 750)
                         const SizedBox(height: 10,),
@@ -36,7 +38,10 @@ class AuthPage extends StatelessWidget {
         
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: CriationAccountComponents(onPressed: (){},),
+                        child: QuestionOptionsLineComponents( 
+                          title: "Ainda não tem uma conta?",
+                          subTitle: "Inscreva-se",
+                          onPressed: (){Navigator.of(context).pushNamed('/register');},),
                       )
                     ],
                   ),
