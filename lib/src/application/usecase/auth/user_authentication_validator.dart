@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../domain/enum/e_request_login_status.dart';
-import '../../shared/communication/requests/request_login.dart';
+import '../../../domain/enum/e_request_login_status.dart';
+import '../../../../shared/communication/requests/request_login.dart';
 
 class UserAuthenticationValidator {
   final formkey = GlobalKey<FormState>();
