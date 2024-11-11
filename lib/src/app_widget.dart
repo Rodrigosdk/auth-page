@@ -1,4 +1,4 @@
-import 'package:auth/src/page/components/button/button_entry_extensions.dart';
+import 'package:auth/src/page/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -61,7 +61,10 @@ class AppWidget extends StatelessWidget {
             background: const Color(0xff7C3AED)),
         ]
       ),
-      home: const AuthPage(),
+      initialRoute: '/home',
+      routes:{
+        "/home": (_)=> const AuthPage(),
+        "/register":(_)=> const RegisterPage()} 
     );
   }
 }
